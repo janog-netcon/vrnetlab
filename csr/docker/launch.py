@@ -75,7 +75,7 @@ class CSR_vm(vrnetlab.VM):
         cfg_file = open("/iosxe_config.txt", "w")
         if self.license:
             cfg_file.write("do clock set 13:33:37 1 Jan 2010\r\n")
-            cfg_file.write("interface GigabitEthernet1\r\n")
+            cfg_file.write("interface GigabitEthernet2\r\n")
             cfg_file.write("ip address 10.0.0.15 255.255.255.0\r\n")
             cfg_file.write("no shut\r\n")
             cfg_file.write("exit\r\n")
@@ -155,7 +155,7 @@ class CSR_vm(vrnetlab.VM):
         self.wait_write("ip domain name example.com")
         self.wait_write("crypto key generate rsa modulus 2048")
 
-        self.wait_write("interface GigabitEthernet1")
+        self.wait_write("interface GigabitEthernet2")
         self.wait_write("ip address 10.0.0.15 255.255.255.0")
         self.wait_write("no shut")
         self.wait_write("exit")
